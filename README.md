@@ -9,5 +9,7 @@ This script currently works for Qtel, Zain KW, Etisalat UAE, jawal palestine (fu
 1- First you need to create an account on HLR-Lookups which will give you free credit at the begnning along with the API username and passowrds that will be used in the script
 
 2- run the script as the below
+
 Usage: ./hlr-lookup.py <MSISDN>
+  
 Example: ./hlr-lookup.py +20123456789
