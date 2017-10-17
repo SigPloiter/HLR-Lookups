@@ -10,10 +10,3 @@ This script currently works for Qtel, Zain KW, Etisalat UAE, jawal palestine (fu
 2- run the script as the below
 Usage: ./hlr-lookup.py <MSISDN>
 Example: ./hlr-lookup.py +20123456789
-  
-  
-
-
-
-
-	
