@@ -5,6 +5,8 @@ Must be noted that those public services like HLR-Lookups are using one variant 
 
 This script currently works for Qtel, Zain KW, Etisalat UAE, jawal palestine (further will be updated)
 
+This shouldnt be the only way to gather information
+
 # How does it work
 1- First you need to create an account on HLR-Lookups which will give you free credit at the begnning along with the API username and passowrds that will be used in the script
 
