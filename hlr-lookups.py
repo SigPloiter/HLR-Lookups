@@ -128,8 +128,11 @@ def hlrLookup(argv,username,passwd):
 
 		
 
-		except requests.exceptions.RequestException as e:
-			print e
+		except :
+			if response_imsi.json()['success'] is False:
+				print response_imsi.json()['errors']
+			elif response_msc.json()['success'] is False:
+				print response_imsi.json()['errors']
 			sys.exit(1)
 		
 	
