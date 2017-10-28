@@ -5,11 +5,16 @@ Must be noted that those public services like HLR-Lookups are using one variant 
 
 This script currently works for 
 -Qtel 
--Zain KW 
+
+-Zain KW
+
 -Etisalat UAE
+
 -DU UAE
+
 -jawal palestine 
 (further will be updated)
+
 
 This is not by any means a comprehensive way to gather info and shouldnt be the only way to gather information
 
