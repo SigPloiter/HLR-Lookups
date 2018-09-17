@@ -13,6 +13,8 @@ This script currently works for
 -DU UAE
 
 -jawal palestine 
+
+-India
 (further will be updated)
 
 
