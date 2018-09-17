@@ -30,3 +30,5 @@ The script also could detect if home routing (SMS FW) is being implemented
 Usage: ./hlr-lookup.py MSISDN
   
 Example: ./hlr-lookup.py +20123456789
+
+Please note: You may need to change the route (route="") if the results are uncertain.
