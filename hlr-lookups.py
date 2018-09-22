@@ -231,7 +231,49 @@ def hlrLookup(argv,username,passwd):
 
 				print "\033[34m[*]\033[0mInformation Retrieved at " + time.asctime()
 			###################################################################################
+			#India
+			elif argv[1:3] == '91':
+				response_msc = requests.get("https://www.hlr-lookups.com/api/?action=submitSyncLookupRequest&msisdn="+argv+"&route=DV8&storage=CURL-TEST&username="+username+"&password="+passwd)
+				response_imsi = requests.get("https://www.hlr-lookups.com/api/?action=submitSyncLookupRequest&msisdn="+argv+"&route=IP1&storage=CURL-TEST&username="+username+"&password="+passwd)
+				
+				mccmnc = response_imsi.json()['results'][0]['mccmnc']
+				
+				if type(response_imsi.json()['results'][0]['msin']) != None:
+					msin = response_imsi.json()['results'][0]['msin']
+					imsi_ver = requests.get("https://www.hlr-lookups.com/api/?action=submitSyncLookupRequest&msisdn="+argv+"&route=IP1&storage=CURL-TEST&username="+username+"&password="+passwd)
+					msin_ver = imsi_ver.json()['results'][0]['msin']
+					print "\033[34m[*]\033[0mChecking for Home Routing/SMS FW..."
 
+					#Checking for home routing/sms FW
+					if msin == msin_ver:
+						print "\033[32m[+]\033[0mTarget IMSI: " + mccmnc + msin
+					else:
+						print "\033[93m[!]\033[0mPossible Implementation of Home Routing Detected: IMSI is Scrambled {"+mccmnc + msin+", "+mccmnc + msin_ver+"}"
+
+				else:
+					print "\033[32m[-]\033[0mTarget IMSI is Null"
+
+				if type(response_imsi.json()['results'][0]['msin']) != None:
+					msc = response_msc.json()['results'][0]['servingmsc']
+					msc_2 = requests.get("https://www.hlr-lookups.com/api/?action=submitSyncLookupRequest&msisdn="+argv+"&route=SV3&storage=CURL-TEST&username="+username+"&password="+passwd)
+					msc_ver = msc_2.json()['results'][0]['servingmsc']
+
+					if msc == msc_ver:
+						print "\033[32m[+]\033[0mTarget Serving MSC: "+ msc
+					else:
+						print "\033[93m[!]\033[0mDifferent MSC GT returned: Further Scanning Required {"+msc+", "+msc_ver+"}"
+
+				if type(response_imsi.json()['results'][0]['msin']) != None:
+					hlr = response_imsi.json()['results'][0]['servinghlr']
+					print "\033[32m[+]\033[0mTarget's HLR: " + hlr
+
+				network_name = response_imsi.json()['results'][0]['originalnetworkname']
+				print "\033[32m[+]\033[0mTarget's Operator: " + network_name
+
+
+				print "\033[34m[*]\033[0mInformation Retrieved at " + time.asctime()
+	  		###################################################################################
+			
 		except :
 			if response_imsi.json()['success'] is False:
 				print '\033[31m[-]Error:\033[0m ', response_imsi.json()['errors']
@@ -239,9 +281,6 @@ def hlrLookup(argv,username,passwd):
 				print '\033[31m[-]Error:\033[0m ',response_imsi.json()['errors']
 			sys.exit(1)
 		
-	
-	
-
 
 if __name__=='__main__':
 
