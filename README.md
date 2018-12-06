@@ -16,7 +16,7 @@ This script currently works for
 
 -India (Airtel, Reliance, Vodafone)
 
-- Russia (MTS)
+-Russia (MTS)
 
 
 This is not by any means a comprehensive way to gather info and shouldnt be the only way to gather information
