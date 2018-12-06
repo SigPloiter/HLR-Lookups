@@ -14,8 +14,10 @@ This script currently works for
 
 -jawal palestine 
 
--India
+-India (Airtel, Reliance, Vodafone)
 (further will be updated)
+
+- Russia (MTS)
 
 
 This is not by any means a comprehensive way to gather info and shouldnt be the only way to gather information
