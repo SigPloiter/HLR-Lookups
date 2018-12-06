@@ -15,7 +15,6 @@ This script currently works for
 -jawal palestine 
 
 -India (Airtel, Reliance, Vodafone)
-(further will be updated)
 
 - Russia (MTS)
 
